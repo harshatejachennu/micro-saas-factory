@@ -10,7 +10,7 @@ function parseCsvLike(text: string, maxRows: number): Row[] {
 }
 
 export default function Page() {
-  const appName = process.env.NEXT_PUBLIC_APP_NAME ?? "Tool Template";
+  const appName = "CSV Formatter Pro";
   const stripeLink = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK ?? "https://buy.stripe.com/REPLACE_ME";
 
   const [fileName, setFileName] = useState("");
@@ -53,7 +53,7 @@ export default function Page() {
     <main className="container">
       <h1 style={{ margin: 0, fontSize: 28 }}>{appName}</h1>
       <p className="muted" style={{ marginTop: 8 }}>
-        Upload → Preview → Pay → Unlock. Safe starter for user-upload tools.
+        Instantly clean, normalize, and standardize messy CSV exports in seconds.
       </p>
 
       <div className="card" style={{ marginTop: 20 }}>
@@ -89,10 +89,20 @@ export default function Page() {
               </table>
             )}
           </div>
+          <div style={{ marginTop: 20 }}>
+            <h3 style={{ marginBottom: 8 }}>What This Tool Does</h3>
+            <ul className="muted">
+              <li>Removes duplicate rows</li>
+              <li>Standardizes phone number formats</li>
+              <li>Normalizes date columns</li>
+              <li>Trims whitespace & hidden characters</li>
+              <li>Auto-detects header row</li>
+            </ul>
+          </div>
 
           <div className="grid" style={{ marginTop: 16 }}>
             <a className="btn btnPrimary" href={stripeLink} target="_blank" rel="noreferrer">
-              Unlock Full Export
+              Unlock Full CSV – $19
             </a>
             <button className="btn" onClick={() => setUnlocked(true)} title="Template-only: simulates payment success">
               Simulate Unlock (Template)
