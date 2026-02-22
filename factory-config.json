@@ -1,0 +1,21 @@
+{
+  "factory": {
+    "mode": "within-bounds",
+    "default_stack": "nextjs-stripe-cloudflare",
+    "deployment": "cloudflare-pages",
+    "ci_strategy": "pr-auto-merge",
+    "monetization": {
+      "model": "stripe-payment-link",
+      "default_price_usd": 19,
+      "pattern": "preview-pay-unlock"
+    },
+    "repo_naming": {
+      "prefix": "tool-",
+      "visibility": "private"
+    },
+    "limits": {
+      "max_client_file_mb": 5,
+      "require_public_data_only": true
+    }
+  }
+}
